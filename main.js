@@ -11,7 +11,7 @@ var nodes = [
     // deliverables artifact
     {id:"med_fidelity", label:"Medium Fidelity Prototype \n (Interactive Mockup)", group:"deliverables", shape:"box"},
     {id:"problem_statement", label:"Problem Statement", group:"deliverables", shape:"box"},
-    {id:"customer_journey", label:"Customer Journey", group:"deliverables", shape:"box"},
+    {id:"customer_journey_design", label:"Customer Journey Design", group:"deliverables", shape:"box"},
     {id:"low_fidelity", label:"Low Fidelity Prototype \n (Paper Prototype, etc)", group:"deliverables", shape:"box"},
     {id:"existing_cust_journey", label:"Existing Customer \n Journey Map", group:"deliverables", shape:"box"},
     {id:"user_persona", label:"User Persona", group:"deliverables", shape:"box"},
@@ -29,6 +29,39 @@ var edges = [
     {from: "existing_design_val", to: "usability_testing", arrows: "to"},
     {from: "high_fidelity", to: "usability_testing", arrows: "to"},
     {from: "usability_testing", to: "existing_design_val", arrows: "to"},
+
+    // input/output design sprint 
+    {from: "design_sprint", to: "med_fidelity", arrows: "to"},
+    {from: "design_sprint", to: "design_uiux", arrows: "to"},
+    {from: "user_persona", to: "design_sprint", arrows: "to"},
+    {from: "problem_statement", to: "design_sprint", arrows: "to"},
+    {from: "customer_journey_design", to: "design_sprint", arrows: "to"},
+    {from: "low_fidelity", to: "design_sprint", arrows: "to"},
+    {from: "existing_cust_journey", to: "design_sprint", arrows: "to"},
+
+    // input/output co-creation
+    {from: "co_creation", to: "customer_journey_design", arrows: "to"},
+    {from: "co_creation", to: "problem_statement", arrows: "to"},
+    {from: "co_creation", to: "low_fidelity", arrows: "to"},
+    {from: "co_creation", to: "existing_cust_journey", arrows: "to"},
+    {from: "co_creation", to: "user_persona", arrows: "to"},
+    {from: "co_creation", to: "product_backlog", arrows: "to"},
+
+    {from: "user_persona", to: "co_creation", arrows: "to"},
+    {from: "design_uiux", to: "co_creation", arrows: "to"},
+    {from: "existing_cust_journey", to: "co_creation", arrows: "to"},
+    {from: "cust_insight", to: "co_creation", arrows: "to"},
+    {from: "product_backlog", to: "co_creation", arrows: "to"},
+    {from: "existing_design_val", to: "co_creation", arrows: "to"},
+
+    // input/output in-depth-interview
+    {from: "in_depth_interview", to: "cust_insight", arrows: "to"},
+    {from: "problem_statement", to: "in_depth_interview", arrows: "to"},
+
+    // input/output scrum-sprint
+    {from: "scrum_sprint", to: "high_fidelity", arrows: "to"},
+    {from: "product_backlog", to: "scrum_sprint", arrows: "to"},
+
 
 ];
 
